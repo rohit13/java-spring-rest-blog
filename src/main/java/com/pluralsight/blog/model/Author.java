@@ -16,6 +16,8 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Version
+    private Long version;
     private String firstname;
     private String lastname;
     @JsonIgnore
@@ -72,6 +74,14 @@ public class Author {
 
     public String getPassword() {
         return password;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
     }
 
     @Override
